@@ -80,13 +80,14 @@ public class AdminTest {
     
     @Test
     public void testChangeCapacityWithReg() {
+    	// Should not be able to reduce size of class if new capacity is less than enrolled.
     	this.admin.createClass("ECS163", 2017, "Kwan-Lui Ma", 20);
     	Student s1 = new Student();
     	Student s2 = new Student();
     	s1.registerForClass("Derp1", "ECS163", 2017);
     	s2.registerForClass("Derp2", "ECS163", 2017);
     	this.admin.changeCapacity("ECS163", 2017, 1);
-    	assertEquals(20, this.admin.getClassCapacity("ECS163", 2017));
+    	assertFalse(this.admin.getClassCapacity("ECS163", 2017) == 1);
     }
     
 }
