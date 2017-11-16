@@ -24,18 +24,6 @@ public class InstructorTest {
         this.admin.createClass("ECS40", 2017, "Berndt Hamann", 20);
         this.lecturer = new Instructor();
     }
-
-    @Test
-    public void testMakeClass() {
-        this.admin.createClass("Test", 2017, "Instructor", 15);
-        assertTrue(this.admin.classExists("Test", 2017));
-    }
-
-    @Test
-    public void testMakeClass2() {
-        this.admin.createClass("Test", 2016, "Instructor", 15);
-        assertFalse(this.admin.classExists("Test", 2016));
-    }
     
     @Test
     public void testBadYearAddHW() {
