@@ -77,4 +77,16 @@ public class AdminTest {
     	this.admin.changeCapacity("ECS177", 2017, 40);
     	assertEquals(40, this.admin.getClassCapacity("ECS177", 2017));
     }
+    
+    @Test
+    public void testChangeCapacityWithReg() {
+    	this.admin.createClass("ECS163", 2017, "Kwan-Lui Ma", 20);
+    	Student s1 = new Student();
+    	Student s2 = new Student();
+    	s1.registerForClass("Derp1", "ECS163", 2017);
+    	s2.registerForClass("Derp2", "ECS163", 2017);
+    	this.admin.changeCapacity("ECS163", 2017, 1);
+    	assertEquals(20, this.admin.getClassCapacity("ECS163", 2017));
+    }
+    
 }
