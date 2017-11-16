@@ -1,15 +1,9 @@
 package core.test;
 
 import core.api.IAdmin;
-import core.api.IInstructor;
-import core.api.IStudent;
 import core.api.impl.Admin;
 import core.api.impl.Student;
-import core.api.impl.Instructor;
 
-import org.junit.Before;
-import org.junit.Test;
-import core.api.impl.Admin;
 import org.junit.Before;
 import org.junit.Test;
 
