@@ -90,4 +90,19 @@ public class AdminTest {
     	assertFalse(this.admin.getClassCapacity("ECS163", 2017) == 1);
     }
     
+    @Test
+    public void testChangeCapToZero() {
+    	// Just as a class shouldn't be able to be created with 0 capacity, should not be able to change to it, either.
+    	this.admin.createClass("ECS40", 2017, "Sean Davis", 20);
+    	this.admin.changeCapacity("ECS40", 2017, 0);
+    	assertFalse(this.admin.getClassCapacity("ECS160", 2017) == 0);
+    }
+    
+    @Test
+    public void testChangeCapToNeg() {
+    	// Should not be able to change capacity to negative, post-creation.
+    	this.admin.createClass("ECS30", 2017, "Berndt Hamann", 20);
+    	this.admin.changeCapacity("ECS30", 2017, -10);
+    	assertFalse(this.admin.getClassCapacity("ECS30", 2017) == -10);
+    }
 }
